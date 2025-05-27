@@ -1,5 +1,5 @@
 export PATH="$HOME/sdbusplus/tools:$PATH"
-alias ctags="/home/baxiche/ctags/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=bin --exclude=build"
+alias ctags="$HOME/ctags/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=bin --exclude=build"
 alias grep="grep --exclude=tags"
 alias hal='ssh sora@192.168.248.37'
 alias wytn='ssh syhann@10.245.13.4'
