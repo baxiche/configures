@@ -1,4 +1,5 @@
 export PATH="$HOME/sdbusplus/tools:$PATH"
+alias ranger="python3 $HOME/ranger/ranger.py"
 alias ctags="$HOME/ctags/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=bin --exclude=build"
 alias grep="grep --exclude=tags"
 alias hal='ssh sora@192.168.248.37'
