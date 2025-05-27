@@ -9,8 +9,7 @@ alias wytnpwd=FavaWylz01!
 function fbmc() {
   case "$1" in 
     "work")
-      ranger $HOME/openbmc/build/yosemite4/tmp/work/armv7ahf-vfpv4d16-openbmc-linux-gnueabi
-      ;;
+      ranger $HOME/openbmc/build/yosemite4/tmp/work/armv7ahf-vfpv4d16-openbmc-linux-gnueabi ;;
     "src")
       ranger $HOME/openbmc/build/yosemite4/workspace/sources
       ;;
@@ -59,16 +58,31 @@ function tls() {
 }
 
 function syncconf() {
-  cp $HOME/ranger/ranger/config/rc.conf $HOME/ranger/ranger/config/rifle.conf $HOME/configures
-  cp $HOME/.bashrc $HOME/.vimrc $HOME/.tmux.conf $HOME/configures
-	cd $HOME/configures
-	git add .
-	git commit -a -m "update conf"
-	git push
+  cp $HOME/ranger/ranger/config/rc.conf    $HOME/configures
+	cp $HOME/ranger/ranger/config/rifle.conf $HOME/configures
+  cp $HOME/.bashrc                         $HOME/configures
+	cp $HOME/.vimrc                          $HOME/configures
+	cp $HOME/.tmux.conf                      $HOME/configures
+	cp $HOME/.ssh/config                     $HOME/configures
+	cp $HOME/.gitconfig                      $HOME/configures
 }
 
 function apyconf() {
 	cd $HOME/configures
 	git pull
+  cp $HOME/configures/rc.conf     $HOME/ranger/ranger/config/rc.conf
+	cp $HOME/configures/rifle.conf  $HOME/ranger/ranger/config/rifle.conf
+	cp $HOME/configures/.ssh/config $HOME/.ssh
+  cp $HOME/configures/.bashrc     $HOME
+	cp $HOME/configures/.vimrc      $HOME
+	cp $HOME/configures/.tmux.conf  $HOME
+	cp $HOME/configures/.gitconfig  $HOME
+}
+
+function pushconf() {
 	syncconf
+	cd $HOME/configures
+	git add .
+	git commit -a -m "update conf"
+	git push
 }
