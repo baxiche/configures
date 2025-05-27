@@ -6,18 +6,18 @@ set path+=/usr/include
 set path+=**
 
 set tags+=tags
-set tags+=/data/sora/sdbusplus/include/sdbusplus/tags
-set tags+=/data/sora/systemd/tags
-set tags+=/data/sora/pldm/tags
-set tags+=/data/sora/mctp/tags
-set tags+=/data/sora/linux_headers/glibc/tags
-set tags+=/data/sora/linux_headers/kernel/tags
-"set tags+=/data/sora/tmp/pldm/tags
+set tags+=$HOME/sdbusplus/include/sdbusplus/tags
+set tags+=$HOME/systemd/tags
+set tags+=$HOME/pldm/tags
+set tags+=$HOME/mctp/tags
+set tags+=$HOME/linux_headers/glibc/tags
+set tags+=$HOME/linux_headers/kernel/tags
+"set tags+=$HOME/tmp/pldm/tags
 set tags+=/home/baxiche/libpldm/tags
-set tags+=/data/sora/phosphor-objmgr/tags
-set tags+=/data/sora/libmctp/tags
-set tags+=/data/sora/sdeventplus/src/sdeventplus/tags
-set tags+=/data/sora/openbmc/build/yosemite4/workspace/sources/systemd/src/systemd/tags;/
+set tags+=$HOME/phosphor-objmgr/tags
+set tags+=$HOME/libmctp/tags
+set tags+=$HOME/sdeventplus/src/sdeventplus/tags
+set tags+=$HOME/openbmc/build/yosemite4/workspace/sources/systemd/src/systemd/tags;/
 set complete-=i
 
 vmap <leader>y y:new /tmp/vimcopy<CR>VGp:x<CR>
