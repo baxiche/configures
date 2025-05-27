@@ -70,13 +70,13 @@ function syncconf() {
 function apyconf() {
 	cd $HOME/configures
 	git pull
-  cp $HOME/configures/rc.conf     $HOME/ranger/ranger/config/rc.conf
-	cp $HOME/configures/rifle.conf  $HOME/ranger/ranger/config/rifle.conf
-	cp $HOME/configures/.ssh/config $HOME/.ssh
-  cp $HOME/configures/.bashrc     $HOME
-	cp $HOME/configures/.vimrc      $HOME
-	cp $HOME/configures/.tmux.conf  $HOME
-	cp $HOME/configures/.gitconfig  $HOME
+  cp $HOME/configures/rc.conf    $HOME/ranger/ranger/config/rc.conf
+	cp $HOME/configures/rifle.conf $HOME/ranger/ranger/config/rifle.conf
+	cp $HOME/configures/config     $HOME/.ssh
+  cp $HOME/configures/.bashrc    $HOME
+	cp $HOME/configures/.vimrc     $HOME
+	cp $HOME/configures/.tmux.conf $HOME
+	cp $HOME/configures/.gitconfig $HOME
 }
 
 function pushconf() {
