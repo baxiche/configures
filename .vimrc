@@ -13,7 +13,7 @@ set tags+=/data/sora/mctp/tags
 set tags+=/data/sora/linux_headers/glibc/tags
 set tags+=/data/sora/linux_headers/kernel/tags
 "set tags+=/data/sora/tmp/pldm/tags
-set tags+=/data/sora/libpldm/tags
+set tags+=/home/baxiche/libpldm/tags
 set tags+=/data/sora/phosphor-objmgr/tags
 set tags+=/data/sora/libmctp/tags
 set tags+=/data/sora/sdeventplus/src/sdeventplus/tags
@@ -37,7 +37,7 @@ set tabstop=2
 " when indenting with '>', use 4 spaces width
 set shiftwidth=2
 " On pressing tab, insert 4 spaces
-set expandtab
+"set expandtab
 set nu rnu
 set clipboard=unnamed
 set incsearch ruler

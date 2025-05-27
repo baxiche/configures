@@ -1,7 +1,6 @@
-export PATH="/data/sora/sdbusplus/tools:$PATH"
-alias ctags="/data/sora/ctags/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=bin --exclude=build"
+export PATH="$HOME/sdbusplus/tools:$PATH"
+alias ctags="/home/baxiche/ctags/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q --exclude=bin --exclude=build"
 alias grep="grep --exclude=tags"
-alias ranger='python3 ~/ranger/ranger.py'
 alias hal='ssh sora@192.168.248.37'
 alias wytn='ssh syhann@10.245.13.4'
 alias wyhq='ssh sora@10.248.40.219'
@@ -10,25 +9,25 @@ alias wytnpwd=FavaWylz01!
 function fbmc() {
   case "$1" in 
     "work")
-      ranger /data/sora/openbmc/build/yosemite4/tmp/work/armv7ahf-vfpv4d16-openbmc-linux-gnueabi
+      ranger $HOME/openbmc/build/yosemite4/tmp/work/armv7ahf-vfpv4d16-openbmc-linux-gnueabi
       ;;
     "src")
-      ranger /data/sora/openbmc/build/yosemite4/workspace/sources
+      ranger $HOME/openbmc/build/yosemite4/workspace/sources
       ;;
     "rfs")
-      ranger /data/sora/openbmc/build/yosemite4/tmp/work/yosemite4-openbmc-linux-gnueabi/obmc-phosphor-image/1.0/rootfs
+      ranger $HOME/openbmc/build/yosemite4/tmp/work/yosemite4-openbmc-linux-gnueabi/obmc-phosphor-image/1.0/rootfs
       ;;
     "dep")
-      ranger /data/sora/openbmc/build/yosemite4/tmp/deploy/images/yosemite4
+      ranger $HOME/openbmc/build/yosemite4/tmp/deploy/images/yosemite4
       ;;
     "bbs")
-      ranger /data/sora/openbmc/meta-phosphor/recipes-phosphor
+      ranger $HOME/openbmc/meta-phosphor/recipes-phosphor
       ;;
     "interface")
-      ranger /data/sora/openbmc/build/yosemite4/tmp/work/armv7ahf-vfpv4d16-openbmc-linux-gnueabi/phosphor-dbus-interfaces/1.0+git/git
+      ranger $HOME/openbmc/build/yosemite4/tmp/work/armv7ahf-vfpv4d16-openbmc-linux-gnueabi/phosphor-dbus-interfaces/1.0+git/git
       ;;
     "mctp")
-      ranger /data/sora/openbmc/build/yosemite4/tmp/work/armv7ahf-vfpv4d16-openbmc-linux-gnueabi/mctp/2.1/git
+      ranger $HOME/openbmc/build/yosemite4/tmp/work/armv7ahf-vfpv4d16-openbmc-linux-gnueabi/mctp/2.1/git
       ;;
       
     *)
@@ -40,7 +39,7 @@ function yv(){
 }
 
 function scpimg() {
-  scp /data/sora/openbmc/build/yosemite4/tmp/deploy/images/yosemite4/obmc*.static.mtd sora@10.248.40.219:/home/sora/obmc.mtd
+  scp $HOME/openbmc/build/yosemite4/tmp/deploy/images/yosemite4/obmc*.static.mtd sora@10.248.40.219:/home/sora/obmc.mtd
 }
 
 function scpbmc() {
@@ -62,6 +61,14 @@ function tls() {
 function syncconf() {
   cp $HOME/ranger/ranger/config/rc.conf $HOME/ranger/ranger/config/rifle.conf $HOME/configures
   cp $HOME/.bashrc $HOME/.vimrc $HOME/.tmux.conf $HOME/configures
-  scp $HOME/ranger/ranger/config/rc.conf $HOME/ranger/ranger/config/rifle.conf sora@wyhq:ranger/ranger/config
-  scp $HOME/.bashrc $HOME/.vimrc $HOME/.tmux.conf sora@wyhq:
+	cd $HOME/configures
+	git add .
+	git commit -a -m "update conf"
+	git push
+}
+
+function apyconf() {
+	cd $HOME/configures
+	git pull
+	syncconf
 }
