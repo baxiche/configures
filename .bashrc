@@ -78,6 +78,7 @@ function apyconf() {
 	cp $HOME/configures/.vimrc     $HOME
 	cp $HOME/configures/.tmux.conf $HOME
 	cp $HOME/configures/.gitconfig $HOME
+	source $HOME/.bashrc
 }
 
 function pushconf() {

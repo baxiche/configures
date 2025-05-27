@@ -1,4 +1,5 @@
-Host wyhq
+
+Host wyhq 
   HostName 10.248.40.219
   User sora
 
